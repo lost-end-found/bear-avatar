@@ -27,9 +27,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       temperature: 0.7,
       max_tokens: 256,
       top_p: 1,
-      prompt: `${process.env.OPENAI_API_SEED_PROMPT}
-
-${keyword}:`,
+      prompt: `${process.env.OPENAI_API_SEED_PROMPT} ${keyword}:`,
     });
 
     const prompt = completion.data.choices?.[0].text!.trim();
