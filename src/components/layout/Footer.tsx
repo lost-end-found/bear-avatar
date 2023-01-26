@@ -64,7 +64,7 @@ export default function Footer() {
             <MdAlternateEmail />
           </SocialButton>
           <Text fontSize="lg" fontWeight="bold">
-            Photoshot.
+            AIvatar
           </Text>
         </Stack>
       </Container>

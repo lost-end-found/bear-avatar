@@ -38,7 +38,7 @@ const Header = () => {
             _groupHover={{ color: "brand.500" }}
             as={IoIosFlash}
           />
-          <Text display={{ base: "none", sm: "inherit" }}>Photoshot.</Text>
+          <Text display={{ base: "none", sm: "inherit" }}>AIvatar</Text>
         </Flex>
         {session ? (
           <HStack>
