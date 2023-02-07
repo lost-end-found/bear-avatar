@@ -1,4 +1,4 @@
-import { resizeImage } from "@/core/utils/upload";
+import { createPreviewMedia, resizeImage } from "@/core/utils/upload";
 import {
   Box,
   Button,
@@ -23,17 +23,19 @@ import { useS3Upload } from "next-s3-upload";
 import { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { MdCheckCircle, MdCloud } from "react-icons/md";
+import { IoIosClose } from "react-icons/io";
 import { useMutation } from "react-query";
 import AvatarsPlaceholder from "../home/AvatarsPlaceholder";
 import { CheckedListItem } from "../home/Pricing";
 import UploadErrorMessages from "./UploadErrorMessages";
 
 type TUploadState = "not_uploaded" | "uploading" | "uploaded";
+export type FilePreview = (File | Blob) & { preview: string };
 
 const MAX_FILES = 25;
 
 const Uploader = ({ handleOnAdd }: { handleOnAdd: () => void }) => {
-  const [files, setFiles] = useState<(File & { preview: string })[]>([]);
+  const [files, setFiles] = useState<FilePreview[]>([]);
   const [uploadState, setUploadState] = useState<TUploadState>("not_uploaded");
   const [errorMessages, setErrorMessages] = useState<string[]>([]);
   const [urls, setUrls] = useState<string[]>([]);
@@ -73,17 +75,24 @@ const Uploader = ({ handleOnAdd }: { handleOnAdd: () => void }) => {
         setErrorMessages([]);
         setFiles([
           ...files,
-          ...acceptedFiles.map((file) =>
-            Object.assign(file, {
-              preview: URL.createObjectURL(file),
-            })
-          ),
+          ...acceptedFiles.map((file) => createPreviewMedia(file)),
         ]);
       }
     },
   });
 
   const handleUpload = async () => {
+    if (files.length < 5) {
+      toast({
+        title: "You need to upload at least 5 photos",
+        duration: 3000,
+        isClosable: true,
+        position: "top-right",
+        status: "error",
+      });
+      return;
+    }
+
     const filesToUpload = Array.from(files);
     setUploadState("uploading");
 
@@ -145,7 +154,7 @@ const Uploader = ({ handleOnAdd }: { handleOnAdd: () => void }) => {
         >
           <input {...getInputProps()} />
           <Box mb={4} position="relative">
-            <AvatarsPlaceholder />
+            <AvatarsPlaceholder character="sacha" />
           </Box>
           <VStack textAlign="center" spacing={1}>
             <Box fontWeight="bold" fontSize="2xl">
@@ -197,7 +206,7 @@ const Uploader = ({ handleOnAdd }: { handleOnAdd: () => void }) => {
             key={file.name}
           >
             <Center top={-2} right={-2} position="absolute">
-              {uploadState == "uploading" && !urls[index] && (
+              {uploadState === "uploading" && !urls[index] && (
                 <Spinner
                   size="lg"
                   thickness="8px"
@@ -205,6 +214,20 @@ const Uploader = ({ handleOnAdd }: { handleOnAdd: () => void }) => {
                   color="brand.500"
                 />
               )}
+
+              {uploadState !== "uploading" && !urls[index] && (
+                <Icon
+                  cursor="pointer"
+                  onClick={() => {
+                    setFiles(files.filter((_, i) => i !== index));
+                  }}
+                  borderRadius="full"
+                  backgroundColor="brand.500"
+                  as={IoIosClose}
+                  fontSize="2rem"
+                />
+              )}
+
               {urls[index] && (
                 <Icon
                   borderRadius="full"
@@ -241,7 +264,9 @@ const Uploader = ({ handleOnAdd }: { handleOnAdd: () => void }) => {
             onClick={handleUpload}
             variant="brand"
           >
-            Upload {files.length} image{files.length > 1 && "s"}
+            {files.length < 5
+              ? "Upload (min 5 photos)"
+              : `Upload ${files.length} photo${files.length > 1 && "s"}`}
           </Button>
         </Box>
       )}
@@ -279,6 +304,7 @@ const Uploader = ({ handleOnAdd }: { handleOnAdd: () => void }) => {
               <option value="dog">Dog</option>
               <option value="cat">Cat</option>
               <option value="couple">Couple</option>
+              <option value="style">Style</option>
             </Select>
             <FormHelperText color="blackAlpha.600">
               Type of the subject
