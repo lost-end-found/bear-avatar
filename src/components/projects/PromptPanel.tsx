@@ -17,9 +17,14 @@ import Image from "next/image";
 import { BsLightbulb } from "react-icons/bs";
 import { FaCameraRetro } from "react-icons/fa";
 import { useMutation } from "react-query";
-import PomptWizardPopover from "./PomptWizardPopover";
+import PromptsDrawer from "./PromptsDrawer";
+import PromptImage from "./PromptImage";
 
-const PromptPanel = () => {
+const PromptPanel = ({
+  hasImageInputAvailable,
+}: {
+  hasImageInputAvailable: Boolean;
+}) => {
   const {
     project,
     shotCredits,
@@ -29,6 +34,8 @@ const PromptPanel = () => {
     updateShotTemplate,
     promptInputRef,
     updatePromptWizardCredits,
+    promptImageUrl,
+    setPromptImageUrl,
   } = useProjectContext();
 
   const { mutate: createPrediction, isLoading: isCreatingPrediction } =
@@ -38,11 +45,13 @@ const PromptPanel = () => {
         axios.post<{ shot: Shot }>(`/api/projects/${project.id}/predictions`, {
           prompt: promptInputRef.current!.value,
           seed: shotTemplate?.seed,
+          ...(promptImageUrl && { image: promptImageUrl }),
         }),
       {
         onSuccess: (response) => {
           addShot(response.data.shot);
           promptInputRef.current!.value = "";
+          setPromptImageUrl(undefined);
         },
       }
     );
@@ -75,9 +84,10 @@ const PromptPanel = () => {
           />
         </Text>
       </Flex>
-      <Box mt={2}>
-        <PomptWizardPopover />
-      </Box>
+      <HStack mt={2}>
+        <PromptsDrawer />
+        {hasImageInputAvailable && <PromptImage />}
+      </HStack>
       <Flex
         flexDirection={{ base: "column", md: "row" }}
         gap={{ base: 4, md: 2 }}
@@ -102,7 +112,41 @@ const PromptPanel = () => {
       </Flex>
 
       <Flex gap={2} flexDirection={{ base: "column", sm: "row" }}>
-        {shotTemplate ? (
+        {promptImageUrl && (
+          <HStack
+            flex="1"
+            mx={3}
+            my={3}
+            alignItems="flex-start"
+            position="relative"
+            overflow="hidden"
+          >
+            <Image
+              style={{ borderRadius: 5 }}
+              unoptimized
+              alt="prompt"
+              src={promptImageUrl}
+              width={48}
+              height={48}
+            />
+            <Text fontSize="md">
+              The new shot will use <b>this image</b> as a guide (image to image
+              mode)
+              <br />
+              <Button
+                onClick={() => {
+                  setPromptImageUrl(undefined);
+                }}
+                size="sm"
+                variant="link"
+                colorScheme="red"
+              >
+                Remove
+              </Button>
+            </Text>
+          </HStack>
+        )}
+        {shotTemplate && (
           <HStack
             flex="1"
             mx={3}
@@ -122,8 +166,8 @@ const PromptPanel = () => {
               height={48}
             />
             <Text fontSize="md">
-              The new shot will use <b>the same style</b> as this image (using
-              the same seed)
+              The new shot will use <b>the same style</b> as this image (same
+              seed)
               <br />
               <Button
                 onClick={() => {
@@ -137,7 +181,9 @@ const PromptPanel = () => {
               </Button>
             </Text>
           </HStack>
-        ) : (
+        )}
+
+        {!shotTemplate && !promptImageUrl && (
           <Box flex="1">
             <VStack alignItems="flex-start">
               <Text color="beige.500" fontSize="sm">
