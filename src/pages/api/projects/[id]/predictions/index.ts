@@ -29,6 +29,10 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     {
       input: {
         prompt: replacePromptToken(prompt, project),
+        'num_inference_steps': 60,
+        scheduler: 'DDIM',
+        guidance_scale: 10,
+        image: image,
         negative_prompt: process.env.REPLICATE_NEGATIVE_PROMPT,
         ...(image && { image }),
         ...(seed && { seed }),

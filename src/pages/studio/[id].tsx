@@ -1,12 +1,12 @@
 import PageContainer from "@/components/layout/PageContainer";
-import PromptPanel from "@/components/projects/PromptPanel";
+import ImageTemplate from "@/components/projects/ImageTemplate";
 import ShotsList from "@/components/projects/shot/ShotsList";
 import ProjectProvider, { PROJECTS_PER_PAGE } from "@/contexts/project-context";
 import replicateClient from "@/core/clients/replicate";
 import db from "@/core/db";
 import { Box, Button } from "@chakra-ui/react";
 import { Project, Shot } from "@prisma/client";
-import { GetServerSidePropsContext } from "next";
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import { getSession } from "next-auth/react";
 import Link from "next/link";
 import { HiArrowLeft } from "react-icons/hi";
@@ -21,7 +21,7 @@ export interface IStudioPageProps {
   hasImageInputAvailable: boolean;
 }
 
-const StudioPage = ({ project, hasImageInputAvailable }: IStudioPageProps) => (
+const StudioPage = ({ project, hasImageInputAvailable }: InferGetServerSidePropsType<typeof getServerSideProps>) => (
   <ProjectProvider project={project}>
     <PageContainer>
       <Box mb={4}>
@@ -35,7 +35,7 @@ const StudioPage = ({ project, hasImageInputAvailable }: IStudioPageProps) => (
           Back to Dashboard
         </Button>
       </Box>
-      <PromptPanel hasImageInputAvailable={hasImageInputAvailable} />
+      <ImageTemplate hasImageInputAvailable={hasImageInputAvailable} />
       <ShotsList />
     </PageContainer>
   </ProjectProvider>

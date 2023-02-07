@@ -35,7 +35,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
           face_upsample: true,
           codeformer_fidelity: 1,
         },
-        version: process.env.REPLICATE_HD_VERSION_MODEL_ID,
+        version: predictionId,
       }
     );
 
@@ -61,7 +61,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         where: { id: shot.id },
         data: {
           hdStatus: "PROCESSED",
-          hdOutputUrl: prediction.output,
+          hdOutputUrl: prediction.output[0],
         },
       });
     }

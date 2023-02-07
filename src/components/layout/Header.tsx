@@ -41,7 +41,7 @@ const Header = () => {
           <Text display={{ base: "none", sm: "inherit" }}>AIvatar</Text>
         </Flex>
         <HStack spacing={1}>
-          <Button
+          {/* <Button
             as={Link}
             href="/prompts"
             colorScheme="beige"
@@ -49,7 +49,7 @@ const Header = () => {
             size="sm"
           >
             Prompts
-          </Button>
+          </Button> */}
           {session ? (
             <>
               <Tooltip hasArrow label="Public gallery">

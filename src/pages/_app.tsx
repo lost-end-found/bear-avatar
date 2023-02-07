@@ -9,16 +9,16 @@ import { Inter } from "@next/font/google";
 import theme from "@/styles/theme";
 import { Analytics } from "@vercel/analytics/react";
 import DefaultHead from "@/components/layout/DefaultHead";
-
+import '../globals.css'
 import "react-medium-image-zoom/dist/styles.css";
 
 const queryClient = new QueryClient();
 export const inter = Inter({ subsets: ["latin"] });
 
 function App({
-  Component,
-  pageProps: { session, ...pageProps },
-}: AppProps<{ session: Session }>) {
+          Component,
+          pageProps: { session, ...pageProps },
+        }) {
   return (
     <ChakraProvider theme={theme}>
       <SessionProvider session={session}>
