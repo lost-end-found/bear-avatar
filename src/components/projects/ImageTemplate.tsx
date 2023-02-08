@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 
 const ImageTemplate = ({
-    hasImageInputAvailable
+    hasImageInputAvailable,
 }: {
     hasImageInputAvailable: Boolean;
 }) => {
@@ -35,8 +35,8 @@ const ImageTemplate = ({
                 </Text>
             </Flex>
             <div className="grid grid-cols-5 gap-5 mt-4">
-                <ShotGenerator project={project} defaultUrl={'https://imgur.com/BIZUS9p.jpg'} shotCredits={shotCredits} />
-                <ShotGenerator project={project} prompt={'icon, byzantine, detailed, soft color, saint, halo, clean skin, looking straight, beautiful mouth, full face, Romanian Pantocrator, wax paint, symmetrical face'} defaultUrl={'https://imgur.com/GHU1I1T.jpg'} shotCredits={shotCredits} />
+                <ShotGenerator prompt={''} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'https://imgur.com/BIZUS9p.jpg'} />
+                <ShotGenerator prompt={'icon, byzantine, detailed, soft color, saint, halo, clean skin, looking straight, beautiful mouth, full face, Romanian Pantocrator, wax paint, symmetrical face'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'https://imgur.com/GHU1I1T.jpg'} />
             </div>
         </div>
     );
