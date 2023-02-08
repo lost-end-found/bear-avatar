@@ -35,8 +35,8 @@ const ImageTemplate = ({
                 </Text>
             </Flex>
             <div className="grid grid-cols-5 gap-5 mt-4">
-                <ShotGenerator prompt={''} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'https://imgur.com/BIZUS9p.jpg'} />
-                <ShotGenerator prompt={'icon, byzantine, detailed, soft color, saint, halo, clean skin, looking straight, beautiful mouth, full face, Romanian Pantocrator, wax paint, symmetrical face'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'https://imgur.com/GHU1I1T.jpg'} />
+                <ShotGenerator prompt={''} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'BIZUS9p.jpg'} />
+                <ShotGenerator prompt={'icon, byzantine, detailed, soft color, saint, halo, clean skin, looking straight, beautiful mouth, full face, Romanian Pantocrator, wax paint, symmetrical face'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'GHU1I1T.jpg'} />
             </div>
         </div>
     );

@@ -25,7 +25,6 @@ const ShotGenerator = ({
         project,
         shotCredits,
         addShot,
-        updateCredits,
         shotTemplate,
         updateShotTemplate,
     } = useProjectContext();
@@ -37,7 +36,7 @@ const ShotGenerator = ({
                 axios.post<{ shot: Shot }>(`/api/projects/${project.id}/predictions`, {
                     prompt: 'painting of @me, detailed, clean skin, looking straight, beautiful mouth, full face, symmetrical face' + prompt,
                     seed: shotTemplate?.seed,
-                    image: defaultUrl,
+                    image: `https://imgur.com/${defaultUrl}`,
                 }),
             {
                 onSuccess: (response) => {
@@ -60,7 +59,7 @@ const ShotGenerator = ({
                         alt={''}
                         width="250"
                         height="250"
-                        src={defaultUrl}
+                        src={`/assets/${defaultUrl}`}
                     />
                     <div className="hidden group-hover:flex absolute top-0 left-0 right-0 bottom-0 bg-black bg-opacity-25 text-white backdrop-blur-md justify-center items-center">
                         <Button
