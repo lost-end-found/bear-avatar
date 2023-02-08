@@ -16,9 +16,9 @@ const queryClient = new QueryClient();
 export const inter = Inter({ subsets: ["latin"] });
 
 function App({
-          Component,
-          pageProps: { session, ...pageProps },
-        }) {
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps<{ session: Session }>) {
   return (
     <ChakraProvider theme={theme}>
       <SessionProvider session={session}>

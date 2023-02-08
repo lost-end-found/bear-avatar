@@ -21,7 +21,7 @@ export interface IStudioPageProps {
   hasImageInputAvailable: boolean;
 }
 
-const StudioPage = ({ project, hasImageInputAvailable }: InferGetServerSidePropsType<typeof getServerSideProps>) => (
+const StudioPage = ({ project, hasImageInputAvailable }: IStudioPageProps) => (
   <ProjectProvider project={project}>
     <PageContainer>
       <Box mb={4}>
