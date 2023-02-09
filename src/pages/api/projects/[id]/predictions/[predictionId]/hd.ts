@@ -31,11 +31,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       {
         input: {
           image: shot.outputUrl,
-          upscale: 8,
-          face_upsample: true,
-          codeformer_fidelity: 1,
+          scale: 8,
+          // face_upsample: true,
+          // codeformer_fidelity: 1,
         },
-        version: project.modelVersionId,
+        version: '42fed1c4974146d4d2414e2be2c5277c7fcf05fcc3a73abf41610695738c1d7b',
       }
     );
 
@@ -61,7 +61,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         where: { id: shot.id },
         data: {
           hdStatus: "PROCESSED",
-          hdOutputUrl: prediction.output[0],
+          hdOutputUrl: prediction.output,
         },
       });
     }

@@ -191,7 +191,7 @@ const ShotCard = ({
                   fontSize="md"
                   icon={<HiDownload />}
                 />
-                {/* <Tooltip hasArrow label={getHdLabel(shot, isHd)}>
+                <Tooltip hasArrow label={getHdLabel(shot, isHd)}>
                   <IconButton
                     icon={<Ri4KFill />}
                     color={isHd ? "red.400" : "gray.600"}
@@ -211,7 +211,7 @@ const ShotCard = ({
                     aria-label="Make 4K"
                     fontSize="lg"
                   />
-                </Tooltip> */}
+                </Tooltip>
               </>
             )}
 
