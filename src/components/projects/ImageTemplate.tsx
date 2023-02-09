@@ -29,6 +29,7 @@ const ImageTemplate = ({
             </Flex>
             <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-5 mt-2">
                 <ShotGenerator prompt={'painting'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'BIZUS9p.jpg'} />
+                <ShotGenerator prompt={'van Gogh style'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'oOdjUfP.jpg'} />
                 <ShotGenerator prompt={'painting, icon, byzantine, detailed, soft color, saint, halo, clean skin, looking straight, beautiful mouth, full face, Romanian Pantocrator, wax paint, symmetrical face'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'GHU1I1T.jpg'} />
             </div>
         </div>
