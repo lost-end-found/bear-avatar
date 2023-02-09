@@ -31,11 +31,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       {
         input: {
           image: shot.outputUrl,
-          scale: 8,
+          task_type: "Real-World Image Super-Resolution-Large",
           // face_upsample: true,
           // codeformer_fidelity: 1,
         },
-        version: '42fed1c4974146d4d2414e2be2c5277c7fcf05fcc3a73abf41610695738c1d7b',
+        version: '660d922d33153019e8c263a3bba265de882e7f4f70396546b6c9c8f9d47a021a',
       }
     );
 
