@@ -32,8 +32,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         input: {
           image: shot.outputUrl,
           task_type: "Real-World Image Super-Resolution-Large",
-          // face_upsample: true,
-          // codeformer_fidelity: 1,
         },
         version: '660d922d33153019e8c263a3bba265de882e7f4f70396546b6c9c8f9d47a021a',
       }
