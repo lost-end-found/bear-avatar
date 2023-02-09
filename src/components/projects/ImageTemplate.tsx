@@ -24,19 +24,12 @@ const ImageTemplate = ({
         <div className="bg-white rounded-md shadow-lg mb-10 p-4">
             <Flex alignItems="center" justifyContent="space-between">
                 <Text fontSize="2xl" fontWeight="semibold">
-                    Studio <b>{getRefinedStudioName(project)}</b>{" "}
-                    <BuyShotButton
-                        credits={shotCredits}
-                        onPaymentSuccess={(credits, promptWizardCredits) => {
-                            updateCredits(credits);
-                            updatePromptWizardCredits(promptWizardCredits);
-                        }}
-                    />
+                    Generate Similar Avatars
                 </Text>
             </Flex>
-            <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-5 mt-4">
-                <ShotGenerator prompt={''} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'BIZUS9p.jpg'} />
-                <ShotGenerator prompt={'icon, byzantine, detailed, soft color, saint, halo, clean skin, looking straight, beautiful mouth, full face, Romanian Pantocrator, wax paint, symmetrical face'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'GHU1I1T.jpg'} />
+            <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-5 mt-2">
+                <ShotGenerator prompt={'painting'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'BIZUS9p.jpg'} />
+                <ShotGenerator prompt={'painting, icon, byzantine, detailed, soft color, saint, halo, clean skin, looking straight, beautiful mouth, full face, Romanian Pantocrator, wax paint, symmetrical face'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'GHU1I1T.jpg'} />
             </div>
         </div>
     );

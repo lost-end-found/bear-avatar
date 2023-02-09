@@ -35,7 +35,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
           face_upsample: true,
           codeformer_fidelity: 1,
         },
-        version: predictionId,
+        version: project.modelVersionId,
       }
     );
 

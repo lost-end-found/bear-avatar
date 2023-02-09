@@ -34,7 +34,7 @@ const ShotGenerator = ({
             "create-prediction",
             (project: Project) =>
                 axios.post<{ shot: Shot }>(`/api/projects/${project.id}/predictions`, {
-                    prompt: 'painting of @me, detailed, clean skin, looking straight, beautiful mouth, full face, symmetrical face' + prompt,
+                    prompt: 'painting of @me, detailed, clean skin, looking straight, beautiful mouth, full face, symmetrical face ' + prompt,
                     seed: shotTemplate?.seed,
                     image: `https://imgur.com/${defaultUrl}`,
                 }),
@@ -46,7 +46,7 @@ const ShotGenerator = ({
         );
 
     return (
-        <form className=""
+        <form className="group"
             onSubmit={(e) => {
                 e.preventDefault();
                 createPrediction(project);
@@ -54,7 +54,7 @@ const ShotGenerator = ({
             }}
         >
             <div>
-                <div className="group relative rounded-md overflow-hidden">
+                <div className="group relative rounded-md overflow-hidden transform transition-shadow shadow-sm hover:shadow-2xl">
                     <Image
                         alt={''}
                         width="250"

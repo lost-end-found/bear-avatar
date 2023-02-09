@@ -179,7 +179,7 @@ const ShotCard = ({
                 />
               </Tooltip>
             )}
-            {shot.outputUrl && (
+            {/* {shot.outputUrl && (
               <>
                 <IconButton
                   size="sm"
@@ -213,7 +213,7 @@ const ShotCard = ({
                   />
                 </Tooltip>
               </>
-            )}
+            )} */}
 
             <Tooltip
               hasArrow

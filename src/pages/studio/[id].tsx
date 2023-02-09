@@ -1,5 +1,6 @@
 import PageContainer from "@/components/layout/PageContainer";
 import ImageTemplate from "@/components/projects/ImageTemplate";
+import PromptPanel from "@/components/projects/PromptPanel";
 import ShotsList from "@/components/projects/shot/ShotsList";
 import ProjectProvider, { PROJECTS_PER_PAGE } from "@/contexts/project-context";
 import replicateClient from "@/core/clients/replicate";
@@ -35,6 +36,8 @@ const StudioPage = ({ project, hasImageInputAvailable }: IStudioPageProps) => (
           Back to Dashboard
         </Button>
       </Box>
+      
+      <PromptPanel hasImageInputAvailable={hasImageInputAvailable} />
       <ImageTemplate hasImageInputAvailable={hasImageInputAvailable} />
       <ShotsList />
     </PageContainer>
