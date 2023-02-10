@@ -33,7 +33,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         scheduler: 'DDIM', //DPMSolverMultistep, DDIM, KLMS
         guidance_scale: 10,
         image: image,
-        disable_safety_check: "true",
+        // disable_safety_check: "true",
         negative_prompt: process.env.REPLICATE_NEGATIVE_PROMPT,
         ...(image && { image }),
         ...(seed && { seed }),

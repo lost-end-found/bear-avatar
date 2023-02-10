@@ -33,7 +33,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
           image: shot.outputUrl,
           task_type: "Real-World Image Super-Resolution-Large",
         },
-        version: '660d922d33153019e8c263a3bba265de882e7f4f70396546b6c9c8f9d47a021a',
+        version: process.env.REPLICATE_HD_VERSION_MODEL_ID,
       }
     );
 
