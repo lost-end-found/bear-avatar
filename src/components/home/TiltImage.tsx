@@ -19,7 +19,7 @@ const TiltImage = ({
     <Tilt
       glareEnable
       glareMaxOpacity={0.4}
-      glareColor="#B5FFD9"
+      glareColor="rgb(168 85 247)"
       glarePosition="all"
       glareBorderRadius="10px"
       tiltMaxAngleX={10}
