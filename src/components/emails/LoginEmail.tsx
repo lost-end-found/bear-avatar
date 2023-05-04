@@ -21,17 +21,17 @@ export default function LoginEmail({ url }: { url: string }): JSX.Element {
                 width="70px"
                 height="70px"
                 align="center"
-                src="https://photoshot.app/favicon.png"
+                src="https://aivatar.studio/favicon.png"
               />
               <MjmlText fontWeight={800} fontSize={20} align="center">
-                Your Photoshot Login Link
+                Your AIvatar Login Link
               </MjmlText>
             </MjmlColumn>
           </MjmlSection>
           <MjmlSection>
             <MjmlColumn>
               <MjmlText>
-                Welcome to Photoshot! Please click the magic link below to sign
+                Welcome to AIvatar! Please click the magic link below to sign
                 in to your account.
               </MjmlText>
               <>

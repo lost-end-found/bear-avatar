@@ -4,10 +4,10 @@
 
 An open-source AI avatar generator web app
 
-[![Photoshot](https://photoshot.app/og-cover.jpg)
+[![Photoshot](https://aivatar.studio/og-cover.jpg)
 ](https://user-images.githubusercontent.com/1102595/206658000-d349ef06-e4f2-4626-9deb-6c8a246f7553.mp4)
 
-Try it out at [photoshot.app](https://photoshot.app)
+Try it out at [aivatar.studio](https://aivatar.studio)
 
 ## Stack
 
