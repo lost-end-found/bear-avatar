@@ -76,28 +76,28 @@ const BuyShotButton = ({
         <MenuItem
           command="$4"
           onClick={() => {
-            handleShotPayment(100);
+            handleShotPayment(20);
           }}
         >
-          <b>100 shots</b>
+          <b>20 shots</b>
           <Text fontSize="xs">+20 prompt assists</Text>
         </MenuItem>
         <MenuItem
           command="$7"
           onClick={() => {
-            handleShotPayment(200);
+            handleShotPayment(50);
           }}
         >
-          <b>200 shots</b>
+          <b>50 shots</b>
           <Text fontSize="xs">+40 prompt assists</Text>
         </MenuItem>
         <MenuItem
-          command="$9"
+          command="$10"
           onClick={() => {
-            handleShotPayment(300);
+            handleShotPayment(100);
           }}
         >
-          <b>300 shots</b>
+          <b>100 shots</b>
           <Text fontSize="xs">+60 prompt assists</Text>
         </MenuItem>
       </MenuList>
