@@ -19,7 +19,7 @@ const ImageTemplate = ({
         updatePromptWizardCredits
     } = useProjectContext();
 
-
+    console.log()
     return (
         <div className="bg-white rounded-md shadow-lg mb-10 p-4">
             <Flex alignItems="center" justifyContent="space-between">
@@ -28,11 +28,19 @@ const ImageTemplate = ({
                 </Text>
             </Flex>
             <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-5 mt-2">
-                <ShotGenerator prompt={'painting'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'BIZUS9p.jpg'} />
-                <ShotGenerator prompt={'painting, icon, byzantine, detailed, soft color, saint, halo, clean skin, looking straight, beautiful mouth, full face, wax paint, symmetrical face'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'DWiWRh1.jpg'} />
-                <ShotGenerator prompt={'van Gogh style'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'oOdjUfP.jpg'} />
-                <ShotGenerator prompt={'painting, icon, byzantine, detailed, soft color, saint, halo, clean skin, looking straight, beautiful mouth, full face, Romanian Pantocrator, wax paint, symmetrical face'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'GHU1I1T.jpg'} />
-                <ShotGenerator prompt={'painting, icon, byzantine, detailed, soft color, saint, halo, clean skin, looking straight, beautiful mouth, full face, Romanian Pantocrator, wax paint, symmetrical face'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'U5FXLsa.jpg'} />
+
+                { project.instanceClass === 'woman' && 
+                    <>
+                        <ShotGenerator prompt={'painting'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'JuSSozk.png'} assetUrl={'BIZUS9p.jpg'} />            
+                        <ShotGenerator prompt={'painting, icon, byzantine, detailed, soft color, saint, halo, clean skin, looking straight, beautiful mouth, full face, Romanian Pantocrator, wax paint, symmetrical face'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'9SYAPfK.png'} assetUrl={'U5FXLsa.jpg'} />
+                        <ShotGenerator prompt={'painting'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'XZTltyA.png'} assetUrl={'mGNwhnA.jpg'} />
+                    </>    
+                }
+                { project.instanceClass === 'man' && 
+                    <>
+                        <ShotGenerator prompt={'van Gogh style'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'Grkspnx.jpg'} assetUrl={'oOdjUfP.jpg'} />
+                    </>
+                }
             </div>
         </div>
     );

@@ -67,7 +67,7 @@ const Slider = () => {
   return (
     <Flex overflowX="hidden" my={5} ref={sliderRef}>
       {prompts.map((prompt) =>
-        ["romy", "sacha"].map((name) => (
+        ["girl", "guy", "larry"].map((name) => (
           <Box
             transition="200ms all"
             _hover={{ filter: "contrast(140%)" }}

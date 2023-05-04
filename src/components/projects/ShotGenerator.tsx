@@ -15,11 +15,13 @@ import { useMutation } from "react-query";
 const ShotGenerator = ({
     hasImageInputAvailable,
     defaultUrl,
-    prompt
+    prompt,
+    assetUrl
 }: {
     hasImageInputAvailable: Boolean;
     defaultUrl: string,
-    prompt: string
+    prompt: string,
+    assetUrl: string,
 }) => {
     const {
         project,
@@ -36,7 +38,7 @@ const ShotGenerator = ({
                 axios.post<{ shot: Shot }>(`/api/projects/${project.id}/predictions`, {
                     prompt: 'painting of @me, detailed, clean skin, looking straight, full face, symmetrical face studio lighting, 8 k, photo shoot, 9 inch kershaw soft focus lens f / 5. 6 ' + prompt,
                     seed: shotTemplate?.seed,
-                    image: `https://imgur.com/${defaultUrl}`,
+                    image: `https://imgur.com/${assetUrl ? assetUrl : defaultUrl}`,
                 }),
             {
                 onSuccess: (response) => {

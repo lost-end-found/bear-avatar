@@ -2,14 +2,14 @@ import { Box, Button, ButtonGroup } from "@chakra-ui/react";
 import React, { useState } from "react";
 import AvatarsPlaceholder from "./AvatarsPlaceholder";
 
-export type TCharacter = "romy" | "sacha";
+export type TCharacter = "girl" | "guy";
 
 const CharacterSwitcher = ({
   onCharacterChange,
 }: {
   onCharacterChange: (character: TCharacter) => void;
 }) => {
-  const [character, setCharacter] = useState<TCharacter>("romy");
+  const [character, setCharacter] = useState<TCharacter>("girl");
 
   return (
     <Box>
@@ -25,22 +25,22 @@ const CharacterSwitcher = ({
         variant="outline"
       >
         <Button
-          variant={character === "romy" ? "brand" : "outline"}
+          variant={character === "girl" ? "brand" : "outline"}
           onClick={() => {
-            setCharacter("romy");
-            onCharacterChange("romy");
+            setCharacter("girl");
+            onCharacterChange("girl");
           }}
         >
-          Romy
+          Girl
         </Button>
         <Button
-          variant={character === "sacha" ? "brand" : "outline"}
+          variant={character === "guy" ? "brand" : "outline"}
           onClick={() => {
-            setCharacter("sacha");
-            onCharacterChange("sacha");
+            setCharacter("guy");
+            onCharacterChange("guy");
           }}
         >
-          Sacha
+          Guy
         </Button>
       </ButtonGroup>
     </Box>

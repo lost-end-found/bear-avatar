@@ -35,7 +35,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         learning_rate: 1e-6,
       },
       model: `${process.env.REPLICATE_USERNAME}/${project.id}`,
-      webhook_completed: `${process.env.NEXTAUTH_URL}/api/webhooks/completed`,
+      webhook_completed: 'https://hooks.zapier.com/hooks/catch/427663/34fqy45/'//`${process.env.NEXTAUTH_URL}/api/webhooks/completed`,
     },
     {
       headers: {

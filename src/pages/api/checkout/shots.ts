@@ -6,9 +6,9 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 });
 
 const PRICES = {
-  100: { price: 400, promptWizardQuantity: 20 },
-  200: { price: 700, promptWizardQuantity: 40 },
-  300: { price: 900, promptWizardQuantity: 80 },
+  20: { price: 400, promptWizardQuantity: 20 },
+  50: { price: 700, promptWizardQuantity: 40 },
+  100: { price: 1000, promptWizardQuantity: 600 },
 };
 
 export default async function handler(
@@ -18,7 +18,7 @@ export default async function handler(
   const quantity = Number(req.query.quantity);
   const ppi = req.query.ppi;
 
-  if (quantity !== 100 && quantity !== 200 && quantity !== 300) {
+  if (quantity !== 20 && quantity !== 50 && quantity !== 100) {
     return res.status(400).json("invalid_quantity");
   }
 

@@ -154,7 +154,7 @@ const Uploader = ({ handleOnAdd }: { handleOnAdd: () => void }) => {
         >
           <input {...getInputProps()} />
           <Box mb={4} position="relative">
-            <AvatarsPlaceholder character="sacha" />
+            <AvatarsPlaceholder character="guy" />
           </Box>
           <VStack textAlign="center" spacing={1}>
             <Box fontWeight="bold" fontSize="2xl">

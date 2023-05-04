@@ -29,11 +29,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     {
       input: {
         prompt: replacePromptToken(prompt, project),
+        'disable_safety_check': true,
         'num_inference_steps': 60,
         scheduler: 'DDIM', //DPMSolverMultistep, DDIM, KLMS
         guidance_scale: 10,
+        prompt_strength: 0.5,
         image: image,
-        // disable_safety_check: "true",
         negative_prompt: process.env.REPLICATE_NEGATIVE_PROMPT,
         ...(image && { image }),
         ...(seed && { seed }),

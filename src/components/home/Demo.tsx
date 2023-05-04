@@ -12,7 +12,7 @@ const MotionBox = motion(Box);
 const Demo = () => {
   const [step, setStep] = useState(0);
   const prompt = prompts[step];
-  const names = ["romy", "sacha"] as const;
+  const names = ["girl", "guy"] as const;
   const index = Math.random() >= 0.5 ? 1 : 0;
 
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import AvatarThumbnail from "./AvatarThumbnail";
 
-const AvatarsPlaceholder = ({ character }: { character: "romy" | "sacha" }) => (
+const AvatarsPlaceholder = ({ character }: { character: "girl" | "guy" }) => (
   <>
     <AvatarThumbnail
       src={`/prompts/${character}/dataset/1.png`}
