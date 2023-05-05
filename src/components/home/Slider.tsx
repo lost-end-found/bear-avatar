@@ -1,7 +1,7 @@
 import React from "react";
+import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import { Box, Flex } from "@chakra-ui/react";
-import "keen-slider/keen-slider.min.css";
 import { prompts } from "@/core/utils/prompts";
 import Image from "next/image";
 import Link from "next/link";

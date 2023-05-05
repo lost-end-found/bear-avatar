@@ -34,9 +34,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         num_class_images: 200,
         learning_rate: 1e-6,
       },
-      // trainer_version: "d5e058608f43886b9620a8fbb1501853b8cbae4f45c857a014011c86ee614ffb",
       model: `${process.env.REPLICATE_USERNAME}/${project.id}`,
-      webhook_completed: `${process.env.NEXTAUTH_URL}/api/webhooks/completed/${project.id}`, //'https://hooks.zapier.com/hooks/catch/427663/34fqy45/'
+      webhook_completed: `${process.env.NEXTAUTH_URL}/api/webhooks/completed/${project.id}`,
     },
     {
       headers: {

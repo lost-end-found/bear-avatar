@@ -16,18 +16,9 @@ const Demo = () => {
   const index = Math.random() >= 0.5 ? 1 : 0;
 
   return (
-    <Box ml={{ base: 0, lg: 10 }} width="100%">
-      <Box
-        width="100%"
-        marginX="auto"
-        fontSize="md"
-        shadow="0 14px 40px 10px rgb(168 85 247), 0 5px 10px -7px black"
-        borderRadius="md"
-        py={2}
-        px={3}
-        backgroundColor="white"
-        borderWidth={1}
-        borderColor="gray.200"
+    <div className="sm:px-12">
+      <div
+        className="flex rounded-md ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md px-4 py-2 bg-white shadow-xl mb-8"
       >
         <WindupChildren
           onFinished={() => {
@@ -48,11 +39,11 @@ const Demo = () => {
           exit={{ opacity: 1 }}
           transition={{ repeat: Infinity, duration: 1.4 }}
         />
-      </Box>
-      <Flex justifyContent="space-between" mt={6} pr={6}>
-        <Box width="100%" position="relative" ml={10}>
+      </div>
+      <div className="flex space-x-32">
+        <div>
           <AvatarsPlaceholder character={names[index]} />
-        </Box>
+        </div>
         <AnimatePresence mode="wait">
           <MotionImage
             key={prompt.label}
@@ -71,8 +62,8 @@ const Demo = () => {
             })}.jpg`}
           />
         </AnimatePresence>
-      </Flex>
-    </Box>
+      </div>
+    </div>
   );
 };
 

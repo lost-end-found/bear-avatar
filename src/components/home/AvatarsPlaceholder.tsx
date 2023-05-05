@@ -2,7 +2,7 @@ import React from "react";
 import AvatarThumbnail from "./AvatarThumbnail";
 
 const AvatarsPlaceholder = ({ character }: { character: "girl" | "guy" }) => (
-  <>
+  <div className="relative">
     <AvatarThumbnail
       src={`/prompts/${character}/dataset/1.jpg`}
       transform="rotate(10deg)"
@@ -18,7 +18,7 @@ const AvatarsPlaceholder = ({ character }: { character: "girl" | "guy" }) => (
       src={`/prompts/${character}/dataset/3.jpg`}
       transform="rotate(-5deg)"
     />
-  </>
+  </div>
 );
 
 export default AvatarsPlaceholder;
