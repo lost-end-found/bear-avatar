@@ -82,9 +82,9 @@ const Uploader = ({ handleOnAdd }: { handleOnAdd: () => void }) => {
   });
 
   const handleUpload = async () => {
-    if (files.length < 5) {
+    if (files.length < 10) {
       toast({
-        title: "You need to upload at least 5 photos",
+        title: "You need to upload at least 10 photos",
         duration: 3000,
         isClosable: true,
         position: "top-right",
@@ -264,8 +264,8 @@ const Uploader = ({ handleOnAdd }: { handleOnAdd: () => void }) => {
             onClick={handleUpload}
             variant="brand"
           >
-            {files.length < 5
-              ? "Upload (min 5 photos)"
+            {files.length < 10
+              ? "Upload (min 10 photos)"
               : `Upload ${files.length} photo${files.length > 1 && "s"}`}
           </Button>
         </Box>

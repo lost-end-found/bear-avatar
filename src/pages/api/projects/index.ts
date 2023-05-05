@@ -55,7 +55,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         const { data } = await replicateClient.get(
           `/v1/trainings/${project.replicateModelId}`
         );
-
+        
         await db.project.update({
           where: { id: project.id },
           data: { modelVersionId: data.version, modelStatus: data?.status },

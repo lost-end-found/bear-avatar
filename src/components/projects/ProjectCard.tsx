@@ -163,7 +163,7 @@ const ProjectCard = ({
         </Center>
       )}
 
-      {project.modelStatus === "failed" && (
+      {project.modelStatus === "failed" || project.modelStatus === "canceled" && (
         <Center marginX="auto">
           <Text my={10} color="red.600" textAlign="center">
             We are sorry but the creation of the model failed. Please contact us
