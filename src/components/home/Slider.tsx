@@ -77,7 +77,7 @@ const Slider = () => {
             <Link href={`/prompts/dreambooth/${prompt.slug}`}>
               <Image
                 style={{ borderRadius: 10 }}
-                src={`/prompts/${name}/${prompt.slug}.png`}
+                src={`/prompts/${name}/${prompt.slug}.jpg`}
                 alt={prompt.label}
                 width="400"
                 height="400"

@@ -68,7 +68,7 @@ const Demo = () => {
             alt={prompt.label}
             src={`/prompts/${names[index]}/${urlSlug(prompt.label, {
               separator: "-",
-            })}.png`}
+            })}.jpg`}
           />
         </AnimatePresence>
       </Flex>

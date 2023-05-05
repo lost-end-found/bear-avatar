@@ -68,7 +68,7 @@ const PromptsDrawer = () => {
                           onClose();
                         }}
                         style={{ borderRadius: 10 }}
-                        src={`/prompts/guy/${prompt.slug}.png`}
+                        src={`/prompts/guy/${prompt.slug}.jpg`}
                         alt={prompt.label}
                         width="400"
                         height="400"

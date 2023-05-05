@@ -31,9 +31,9 @@ const ImageTemplate = ({
 
                 { project.instanceClass === 'woman' && 
                     <>
-                        <ShotGenerator prompt={'painting'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'JuSSozk.png'} assetUrl={'BIZUS9p.jpg'} />            
-                        <ShotGenerator prompt={'painting, icon, byzantine, detailed, soft color, saint, halo, clean skin, looking straight, beautiful mouth, full face, Romanian Pantocrator, wax paint, symmetrical face'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'9SYAPfK.png'} assetUrl={'U5FXLsa.jpg'} />
-                        <ShotGenerator prompt={'painting'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'XZTltyA.png'} assetUrl={'mGNwhnA.jpg'} />
+                        <ShotGenerator prompt={'painting'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'JuSSozk.jpg'} assetUrl={'BIZUS9p.jpg'} />            
+                        <ShotGenerator prompt={'painting, icon, byzantine, detailed, soft color, saint, halo, clean skin, looking straight, beautiful mouth, full face, Romanian Pantocrator, wax paint, symmetrical face'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'9SYAPfK.jpg'} assetUrl={'U5FXLsa.jpg'} />
+                        <ShotGenerator prompt={'painting'} hasImageInputAvailable={hasImageInputAvailable} defaultUrl={'XZTltyA.jpg'} assetUrl={'mGNwhnA.jpg'} />
                     </>    
                 }
                 { project.instanceClass === 'man' && 

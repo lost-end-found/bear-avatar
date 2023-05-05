@@ -33,7 +33,7 @@ const items = [
   },
   {
     label: "cyberpunk",
-    womanImg: "https://i.imgur.com/sQNZhR9.png",
+    womanImg: "https://i.imgur.com/sQNZhR9.jpg",
     manImg: "",
     prompt:
       "closeup portrait of @me as a cyberpunk, dark and gritty, highly detailed, retro-futuristic style, neon lighting, cyberpunk city in the background, art by wlop, greg rutkowski, and charlie bowater, 8 k resolution, ultra-realistic, octane render, unreal engine.",

@@ -28,7 +28,7 @@ const TiltImage = ({
     >
       <Image
         style={{ borderRadius: 10 }}
-        src={`/prompts/${character}/${slug}.png`}
+        src={`/prompts/${character}/${slug}.jpg`}
         alt={slug}
         width="512"
         height="512"
