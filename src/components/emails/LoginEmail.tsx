@@ -21,7 +21,7 @@ export default function LoginEmail({ url }: { url: string }): JSX.Element {
                 width="70px"
                 height="70px"
                 align="center"
-                src="https://aivatar.studio/favicon.png"
+                src="https://aivatar.studio/favicon.svg"
               />
               <MjmlText fontWeight={800} fontSize={20} align="center">
                 Your AIvatar Login Link
