@@ -1,5 +1,4 @@
 import { useId, useRef, useState } from 'react'
-import Image from 'next/image'
 import clsx from 'clsx'
 import { motion, useInView, useMotionValue } from 'framer-motion'
 
@@ -338,10 +337,8 @@ export function Hero() {
             AIvatar uses advanced AI technology to create personalized digital avatars that look just like you. Whether for personal or professional use, experience the future of digital self-expression with AIvatar - create your unique avatar today and bring your digital self to life!
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
-              {/* <AppStoreLink /> */}
               <Button
                 href="/dashboard"
-                // variant="outline"
               >
                 Create Your Avatar
               </Button>
