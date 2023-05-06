@@ -3,12 +3,12 @@ import {
   Avatar,
   AvatarGroup,
   Box,
-  Button,
   List,
   Spinner,
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { Button } from "@/components/Button";
 import { Project } from "@prisma/client";
 import axios from "axios";
 import Link from "next/link";
@@ -20,9 +20,6 @@ import { CheckedListItem } from "../home/Pricing";
 const FormPayment = ({
   project,
   handlePaymentSuccess,
-}: {
-  project: Project;
-  handlePaymentSuccess: () => void;
 }) => {
   const [waitingPayment, setWaitingPayment] = useState(false);
   const { query } = useRouter();
@@ -37,6 +34,7 @@ const FormPayment = ({
       enabled: waitingPayment,
       onSuccess: () => {
         handlePaymentSuccess();
+        plausible('PaymentSuccess')
       },
     }
   );
@@ -88,9 +86,10 @@ const FormPayment = ({
             </CheckedListItem>
           </List>
           <Button
-            as={Link}
-            variant="brand"
             href={`/api/checkout/session?ppi=${project.id}`}
+            onClick={() => {
+              plausible('StartCheckout')
+            }}
           >
             Unlock Now - {formatStudioPrice()}
           </Button>

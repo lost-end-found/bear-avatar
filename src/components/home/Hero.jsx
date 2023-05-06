@@ -339,6 +339,9 @@ export function Hero() {
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
               <Button
                 href="/dashboard"
+                onClick={() => {
+                  plausible('StartJourney')
+                }}
               >
                 Create Your Avatar
               </Button>

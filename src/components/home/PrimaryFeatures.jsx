@@ -323,8 +323,6 @@ function DescribeScreen({ custom, animated = false }) {
           </div>
           <div
             className="overflow-hidden flex my-8"
-            overflowX="hidden"
-            my={5}
             ref={sliderRef}
           >
             {prompts.map((prompt) =>
