@@ -8,6 +8,23 @@ const description =
 const image = "https://aivatar.studio/og-cover.jpg";
 
 const DefaultHead = () => {
+  function addOrganizationJsonLd() {
+    return {
+      __html: `
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "AIvatar",
+          "url": "https://aivatar.studio",
+          "logo": "https://aivatar.studio/favicon.png",
+          "sameAs": [
+            "https://instagram.com/aivatar.studio"
+          ]
+        }
+      `,
+    };
+  }
+
   return (
     <>
       <Head>
@@ -35,6 +52,13 @@ const DefaultHead = () => {
         dangerouslySetInnerHTML={{
           __html: `window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`,
         }}
+      />
+      <Script
+        strategy="lazyOnload"
+        id="organization-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={addOrganizationJsonLd()}
+        key="product-jsonld"
       />
     </>
   )
