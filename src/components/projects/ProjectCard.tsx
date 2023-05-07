@@ -5,13 +5,13 @@ import {
   AvatarGroup,
   Badge,
   Box,
-  Button,
   Center,
   Flex,
   Spinner,
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { Button } from "@/components/Button";
 import { Project } from "@prisma/client";
 import axios from "axios";
 import { formatRelative } from "date-fns";
@@ -71,7 +71,7 @@ const ProjectCard = ({
             <Text fontSize="2xl" fontWeight="semibold">
               Studio <b>{getRefinedStudioName(project)}</b>{" "}
               {isReady && (
-                <Badge colorScheme="teal">{project.credits} shots left</Badge>
+                <Badge colorScheme="purple">{project.credits} shots left</Badge>
               )}
             </Text>
             <Text textTransform="capitalize" fontSize="sm" color="beige.500">
@@ -107,7 +107,6 @@ const ProjectCard = ({
                 ))}
               </AvatarGroup>
               <Button
-                variant="brand"
                 rightIcon={<IoIosFlash />}
                 isLoading={isModelLoading || isSuccess}
                 onClick={() => {
@@ -139,7 +138,6 @@ const ProjectCard = ({
               )}
               <Button
                 rightIcon={<HiArrowRight />}
-                variant="brand"
                 href={`/studio/${project.id}`}
                 as={Link}
               >

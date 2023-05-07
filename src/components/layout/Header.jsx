@@ -1,6 +1,6 @@
-import React from "react";
-import Link from "next/link";
-import { useSession, signOut } from "next-auth/react";
+import React from 'react'
+import Link from 'next/link'
+import { useSession, signOut } from 'next-auth/react'
 import {
   Flex,
   HStack,
@@ -8,12 +8,12 @@ import {
   Text,
   Spinner,
   Tooltip,
-} from "@chakra-ui/react";
-import { HiLogout } from "react-icons/hi";
-import { Button } from "@/components/Button";
+} from '@chakra-ui/react'
+import { HiLogout } from 'react-icons/hi'
+import { Button } from '@/components/Button'
 
 const Header = () => {
-  const { data: session, status } = useSession();
+  const { data: session, status } = useSession()
 
   return (
     <div className="container mx-auto flex flex-col">
@@ -27,7 +27,7 @@ const Header = () => {
           fontSize="2xl"
         >
           <svg
-            className="w-10 h-10 text-current"
+            className="h-10 w-10 text-current"
             width="240px"
             height="379px"
             viewBox="0 0 240 379"
@@ -116,22 +116,20 @@ const Header = () => {
               </g>
             </g>
           </svg>
-          <Text display={{ base: "none", sm: "inherit" }}>AIvatar</Text>
+          <Text display={{ base: 'none', sm: 'inherit' }}>AIvatar</Text>
         </Flex>
-        <div className="space-x-4 flex">
-          <Button variant="outline" href="/prompts">
+        <div className="space-x-4">
+          <Button size="sm" variant="outline" href="/prompts">
             Prompts
           </Button>
           {session ? (
             <>
               <Tooltip hasArrow label="Public gallery">
-                <Button
-                  href={`/gallery/${session.userId}`}
-                >
+                <Button size="sm" href={`/gallery/${session.userId}`}>
                   My Gallery
                 </Button>
               </Tooltip>
-              <Button href="/dashboard">
+              <Button size="sm" href="/dashboard">
                 Dashboard
               </Button>
               <Tooltip hasArrow label="Logout">
@@ -142,23 +140,25 @@ const Header = () => {
                   colorScheme="beige"
                   variant="ghost"
                   onClick={() => {
-                    signOut({ callbackUrl: "/" });
+                    signOut({ callbackUrl: '/' })
                   }}
                 />
               </Tooltip>
             </>
           ) : (
-            <Button
-              href="/login"
-              as={Link}
-            >
-              { status === "loading" ? <Spinner size={'md'} /> : "Login"}
-            </Button>
+            <>
+              {status === 'loading' && <Spinner size={'sm'} />}
+              {status !== 'loading' && (
+                <Button size="sm" href="/login" as={Link}>
+                  Login
+                </Button>
+              )}
+            </>
           )}
         </div>
       </Flex>
     </div>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

@@ -29,23 +29,23 @@ const MotionAppScreenBody = motion(AppScreen.Body)
 
 const features = [
   {
-    name: 'Upload',
+    name: 'Upload Selfies',
     description:
       'Begin by uploading a few selfies of yourself or someone else, taken from different angles. Our advanced AI algorithms will use these photos to create a stunning digital avatar that looks just like you.',
     icon: DeviceUserIcon,
     screen: UploadScreen,
   },
   {
-    name: 'Wait',
+    name: 'Wait until the magic happens',
     description:
       'While our AI technology works its magic, sit back and relax with a cup of coffee. Our system will analyze your photos and build a unique virtual studio based on your features, ensuring that your avatar is as lifelike as possible.',
     icon: DeviceNotificationIcon,
     screen: WaitScreen,
   },
   {
-    name: 'Describe',
+    name: 'Describe your avatar in detail and get started!',
     description:
-      'Once your avatar is created, it’s time to describe its appearance and characteristics! Use your imagination to come up with a detailed description of your avatar’s features, such as its hair color, eye shape, clothing style, and personality traits. Your avatar is fully customizable to your preferences, so you can create a digital persona that truly represents you. With AIvatar, the possibilities are endless!',
+      'Once your studio is created, it’s time to describe the avatar you want to create! Use your imagination to come up with a detailed description of your avatar’s features, such as its hair color, eye shape, clothing style, and personality traits. Your avatar is fully customizable to your preferences, so you can create a digital persona that truly represents you. With AIvatar, the possibilities are endless!',
     icon: DeviceTouchIcon,
     screen: DescribeScreen,
   },
