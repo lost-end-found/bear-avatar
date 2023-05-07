@@ -9,11 +9,12 @@ const description =
 const image = "https://aivatar.studio/og-cover.jpg";
 
 
-export function CanonicalURL() {
+const CanonicalURL = () => {
   const siteUrl = 'https://aivatar.studio';
   const router = useRouter();
   const cleanPath = router.asPath.split('#')[0].split('?')[0];
   const canonicalUrl = `${siteUrl}` + (router.asPath === '/' ? '' : cleanPath);
+  return canonicalUrl
 };
 
 const DefaultHead = () => {
@@ -54,7 +55,7 @@ const DefaultHead = () => {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
-        <CanonicalURL />
+        <link rel="canonical" href={CanonicalURL()} />
       </Head>
       <Script data-domain="aivatar.studio" strategy="lazyOnload" src="https://analytics.rakun.ie/js/plausible.js" />
       <Script
