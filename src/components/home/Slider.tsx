@@ -81,7 +81,7 @@ const Slider = () => {
                 alt={prompt.label}
                 width="400"
                 height="400"
-                unoptimized
+                unoptimized={true}
               />
             </Link>
           </Box>

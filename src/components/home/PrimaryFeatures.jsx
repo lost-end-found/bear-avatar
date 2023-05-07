@@ -340,7 +340,7 @@ function DescribeScreen({ custom, animated = false }) {
                       alt={prompt.label}
                       width="100"
                       height="100"
-                      unoptimized
+                      unoptimized={true}
                     />
                   </Link>
                 </Box>

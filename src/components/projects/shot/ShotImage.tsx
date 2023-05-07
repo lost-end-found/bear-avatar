@@ -37,7 +37,7 @@ const ShotImage = ({ shot, isHd = false }: { shot: Shot; isHd?: boolean }) => {
           src={isHd ? shot.hdOutputUrl! : shot.outputUrl!}
           width={512}
           height={512}
-          unoptimized
+          unoptimized={true}
         />
       </ControlledZoom>
     </Box>

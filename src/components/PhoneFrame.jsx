@@ -30,13 +30,6 @@ export function PhoneFrame({
         {children}
       </div>
       <PlaceholderFrame className="pointer-events-none absolute inset-0 h-full w-full fill-gray-100" />
-      {/* <Image
-        src={frame}
-        alt=""
-        className="pointer-events-none absolute inset-0 h-full w-full"
-        unoptimized
-        priority={priority}
-      /> */}
     </div>
   )
 }

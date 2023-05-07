@@ -118,7 +118,7 @@ const PromptPanel = ({
           >
             <Image
               style={{ borderRadius: 5 }}
-              unoptimized
+              unoptimized={true}
               alt="prompt"
               src={promptImageUrl}
               width={48}
@@ -154,7 +154,7 @@ const PromptPanel = ({
               style={{ borderRadius: 5 }}
               placeholder="blur"
               blurDataURL={shotTemplate.blurhash || "placeholder"}
-              unoptimized
+              unoptimized={true}
               alt={shotTemplate.prompt}
               src={shotTemplate.outputUrl!}
               width={48}

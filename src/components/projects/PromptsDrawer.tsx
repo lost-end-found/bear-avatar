@@ -72,7 +72,7 @@ const PromptsDrawer = () => {
                         alt={prompt.label}
                         width="400"
                         height="400"
-                        unoptimized
+                        unoptimized={true}
                       />
                       <Text
                         textTransform="capitalize"

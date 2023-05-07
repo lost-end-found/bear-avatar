@@ -32,7 +32,7 @@ const TiltImage = ({
         alt={slug}
         width="512"
         height="512"
-        unoptimized
+        unoptimized={true}
       />
     </Tilt>
   </Box>

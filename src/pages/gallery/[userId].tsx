@@ -31,7 +31,7 @@ const Gallery = ({
               src={shot.outputUrl!}
               width={512}
               height={512}
-              unoptimized
+              unoptimized={true}
             />
           </Box>
         ))}
