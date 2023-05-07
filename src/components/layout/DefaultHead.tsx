@@ -1,11 +1,20 @@
 import Head from "next/head";
 import React from "react";
 import Script from 'next/script';
+import { useRouter } from 'next/router';
 
 const title = "Generate Custom AI avatar - AIvatar";
 const description =
   "Generate AI avatars that perfectly capture your unique style. Write a prompt and let our Dreambooth and Stable diffusion technology do the rest.";
 const image = "https://aivatar.studio/og-cover.jpg";
+
+
+export function CanonicalURL() {
+  const siteUrl = 'https://aivatar.studio';
+  const router = useRouter();
+  const cleanPath = router.asPath.split('#')[0].split('?')[0];
+  const canonicalUrl = `${siteUrl}` + (router.asPath === '/' ? '' : cleanPath);
+};
 
 const DefaultHead = () => {
   function addOrganizationJsonLd() {
@@ -45,6 +54,7 @@ const DefaultHead = () => {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
+        <CanonicalURL />
       </Head>
       <Script data-domain="aivatar.studio" strategy="lazyOnload" src="https://analytics.rakun.ie/js/plausible.js" />
       <Script
