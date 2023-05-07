@@ -14,6 +14,14 @@ const nextConfig = {
       },
     ],
   },
+  redirects: async () => [
+    {
+      source: '/:path*',
+      has: [{ type: 'host', value: 'www.aivatar.studio' }],
+      destination: 'https://aivatar.studio/:path*',
+      permanent: true
+    }
+  ]
 };
 
 module.exports = nextConfig;
