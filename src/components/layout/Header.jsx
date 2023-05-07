@@ -119,7 +119,7 @@ const Header = () => {
           <Text display={{ base: "none", sm: "inherit" }}>AIvatar</Text>
         </Flex>
         <div className="space-x-4 flex">
-          <Button as={Link} variant="outline" href="/prompts">
+          <Button variant="outline" href="/prompts">
             Prompts
           </Button>
           {session ? (
@@ -127,12 +127,11 @@ const Header = () => {
               <Tooltip hasArrow label="Public gallery">
                 <Button
                   href={`/gallery/${session.userId}`}
-                  as={Link}
                 >
                   My Gallery
                 </Button>
               </Tooltip>
-              <Button href="/dashboard" as={Link}>
+              <Button href="/dashboard">
                 Dashboard
               </Button>
               <Tooltip hasArrow label="Logout">
