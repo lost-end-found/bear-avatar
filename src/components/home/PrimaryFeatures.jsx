@@ -7,12 +7,11 @@ import {
   Link,
   Highlight,
   Spinner,
-  Image,
   Textarea,
   VStack,
   List,
-  Text,
 } from '@chakra-ui/react'
+import Image from 'next/image';
 import { CheckedListItem } from '../home/Pricing'
 import AvatarsPlaceholder from '../home/AvatarsPlaceholder'
 

@@ -6,7 +6,7 @@ const baseStyles = {
   solid:
     'inline-flex justify-center items-center rounded-lg py-2 px-3 font-semibold outline-2 outline-offset-2 transition-colors',
   outline:
-    'inline-flex justify-center items-center rounded-lg border py-[calc(theme(spacing.2)-1px)] px-[calc(theme(spacing.3)-1px)] outline-2 outline-offset-2 transition-colors',
+    'inline-flex justify-center items-center rounded-lg border-2 py-[calc(theme(spacing.2)-1px)] px-[calc(theme(spacing.3)-1px)] outline-2 outline-offset-2 transition-colors font-semibold',
 }
 
 const variantStyles = {
@@ -18,6 +18,7 @@ const variantStyles = {
   },
   outline: {
     gray: 'border-gray-300 text-gray-700 hover:border-gray-400 active:bg-gray-100 active:text-gray-700/80',
+    purple: 'border-purple-500 hover:border-purple-400 active:bg-purple-100 active:text-purple-700/80',
   },
 }
 

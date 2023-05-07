@@ -37,7 +37,7 @@ export default function Pricing() {
               Create your personalized AI avatar with AIvatar’s studio for just $10
             </p>
             <div className="mt-10 flex items-center gap-x-4">
-              <h4 className="flex-none text-sm font-semibold leading-6 text-indigo-600">What’s included</h4>
+              <h4 className="flex-none text-sm font-semibold leading-6 text-purple-600">What’s included</h4>
               <div className="h-px flex-auto bg-gray-100" />
             </div>
             <ul
@@ -46,7 +46,7 @@ export default function Pricing() {
             >
               {includedFeatures.map((feature) => (
                 <li key={feature} className="flex gap-x-3">
-                  <CheckIcon className="h-6 w-5 flex-none text-indigo-600" aria-hidden="true" />
+                  <CheckIcon className="h-6 w-5 flex-none text-purple-600" aria-hidden="true" />
                   <p dangerouslySetInnerHTML={{ __html: feature }}></p>
                 </li>
               ))}
