@@ -1,6 +1,7 @@
 import { forwardRef } from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { Spinner } from '@chakra-ui/react'
 
 const baseStyles = {
   solid:
@@ -28,7 +29,7 @@ const variantStyles = {
 }
 
 export const Button = forwardRef(function Button(
-  { variant = 'solid', size = 'base', color = 'purple', className, href, ...props },
+  { variant = 'solid', size = 'base', color = 'purple', isLoading=false, className, href, ...props },
   ref
 ) {
   className = clsx(
@@ -37,8 +38,7 @@ export const Button = forwardRef(function Button(
     sizeStyles[size],
     className
   )
-
-  return href ? (
+  return isLoading ? () => <Spinner /> : href ? (
     <Link ref={ref} href={href} className={className} {...props} />
   ) : (
     <button ref={ref} className={className} {...props} />

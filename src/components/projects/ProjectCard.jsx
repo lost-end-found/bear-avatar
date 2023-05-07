@@ -15,19 +15,13 @@ import { Button } from "@/components/Button";
 import { Project } from "@prisma/client";
 import axios from "axios";
 import { formatRelative } from "date-fns";
-import Link from "next/link";
-import { HiArrowRight } from "react-icons/hi";
-import { IoIosFlash } from "react-icons/io";
 import { useMutation } from "react-query";
 import FormPayment from "./FormPayment";
 import ProjectDeleteButton from "./ProjectDeleteButton";
 
 const ProjectCard = ({
-  project,
+  project = ProjectWithShots,
   handleRefreshProjects,
-}: {
-  project: ProjectWithShots;
-  handleRefreshProjects: () => void;
 }) => {
   const {
     mutate: trainModel,
@@ -35,7 +29,7 @@ const ProjectCard = ({
     isSuccess,
   } = useMutation(
     `train-model-${project.id}`,
-    (project: Project) =>
+    (project) =>
       axios.post(`/api/projects/${project.id}/train`, {
         prompt,
       }),
@@ -107,7 +101,6 @@ const ProjectCard = ({
                 ))}
               </AvatarGroup>
               <Button
-                rightIcon={<IoIosFlash />}
                 isLoading={isModelLoading || isSuccess}
                 onClick={() => {
                   trainModel(project);
@@ -132,15 +125,11 @@ const ProjectCard = ({
                   {project.shots
                     .filter((shot) => Boolean(shot.outputUrl))
                     .map((shot) => (
-                      <Avatar key={shot.outputUrl} src={shot.outputUrl!} />
+                      <Avatar key={shot.outputUrl} src={shot.outputUrl} />
                     ))}
                 </AvatarGroup>
               )}
-              <Button
-                rightIcon={<HiArrowRight />}
-                href={`/studio/${project.id}`}
-                as={Link}
-              >
+              <Button href={`/studio/${project.id}`} >
                 View my Studio
               </Button>
             </VStack>
