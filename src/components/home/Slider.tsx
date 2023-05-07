@@ -79,9 +79,8 @@ const Slider = () => {
                 style={{ borderRadius: 10 }}
                 src={`/prompts/${name}/${prompt.slug}.jpg`}
                 alt={prompt.label}
-                width="400"
-                height="400"
-                unoptimized={true}
+                width={160}
+                height={160}
               />
             </Link>
           </Box>

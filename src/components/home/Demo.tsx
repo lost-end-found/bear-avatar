@@ -1,5 +1,6 @@
 import { prompts } from "@/core/utils/prompts";
-import { Box, Flex, Image } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Pause, WindupChildren } from "windups";
@@ -51,11 +52,10 @@ const Demo = () => {
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: 30, opacity: 0 }}
             transition={{ delay: 0.2 }}
-            shadow="2xl"
-            borderRadius="3xl"
-            width="14rem"
-            height="14rem"
-            zIndex={10}
+            className="rounded-3xl shadow-xl z-10"
+            width={224}
+            height={224}
+            loading="eager"
             alt={prompt.label}
             src={`/prompts/${names[index]}/${urlSlug(prompt.label, {
               separator: "-",
