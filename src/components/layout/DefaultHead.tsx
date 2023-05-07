@@ -65,7 +65,6 @@ const DefaultHead = () => {
         }}
       />
       <Script
-        strategy="lazyOnload"
         id="organization-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={addOrganizationJsonLd()}
