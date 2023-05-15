@@ -149,7 +149,7 @@ const Header = () => {
             <>
               {status === 'loading' && <Spinner size={'sm'} />}
               {status !== 'loading' && (
-                <Button size="sm" href="/login" as={Link}>
+                <Button size="sm" href="/login">
                   Login
                 </Button>
               )}
