@@ -16,7 +16,7 @@ const Header = () => {
   const { data: session, status } = useSession()
 
   return (
-    <div className="container mx-auto flex flex-col">
+    <div className="container mx-auto flex flex-col px-4 sm:px-6 lg:px-8">
       <Flex justifyContent="space-between" py={4} as="footer">
         <Flex
           role="group"
@@ -118,31 +118,86 @@ const Header = () => {
           </svg>
           <Text display={{ base: 'none', sm: 'inherit' }}>AIvatar</Text>
         </Flex>
-        <div className="space-x-4">
+        <div className="space-x-4 flex items-center justify-end">
           <Button size="sm" variant="outline" href="/prompts">
-            Prompts
+            <span className="hidden sm:inline">Prompts</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="inline h-[1.25em] w-[1.25em] sm:hidden"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
+              />
+            </svg>
           </Button>
           {session ? (
             <>
               <Tooltip hasArrow label="Public gallery">
                 <Button size="sm" href={`/gallery/${session.userId}`}>
-                  My Gallery
+                  <span className="hidden sm:inline">My Gallery</span>
+                  <svg
+                    className="inline h-[1.25em] w-[1.25em] sm:hidden"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                    />
+                  </svg>
                 </Button>
               </Tooltip>
               <Button size="sm" href="/dashboard">
-                Dashboard
+                <span className="hidden sm:inline">Dashboard</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="inline h-[1.25em] w-[1.25em] sm:hidden"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 13.5V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 9.75V10.5"
+                  />
+                </svg>
               </Button>
               <Tooltip hasArrow label="Logout">
-                <IconButton
-                  aria-label="logout"
-                  icon={<HiLogout />}
+                <Button
                   size="sm"
-                  colorScheme="beige"
-                  variant="ghost"
+                  variant="outline"
+                  color="gray"
                   onClick={() => {
                     signOut({ callbackUrl: '/' })
                   }}
-                />
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    className="inline h-[1.25em] w-[1.25em]"
+                    >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"
+                    />
+                  </svg>
+                </Button>
               </Tooltip>
             </>
           ) : (
