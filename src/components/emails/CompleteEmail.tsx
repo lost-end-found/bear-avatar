@@ -31,8 +31,7 @@ export default function CompletedEmail({ url }: { url: string }): JSX.Element {
           <MjmlSection>
             <MjmlColumn>
               <MjmlText>
-                Welcome to AIvatar! Please click the magic link below to sign
-                in to your account.
+                Your studio is complete! You can now access it by clicking the button below.
               </MjmlText>
               <MjmlButton
                   href={`${process.env.NEXTAUTH_URL}/studio/${url}`}
@@ -45,21 +44,6 @@ export default function CompletedEmail({ url }: { url: string }): JSX.Element {
                 >
                   Open Studio
               </MjmlButton>
-              <MjmlText>
-                {`If you're on a mobile device, you can also copy the link below
-                and paste it into the browser of your choice.`}
-              </MjmlText>
-              {/* <MjmlText>
-                <a
-                  rel="nofollow"
-                  style={{
-                    textDecoration: "none",
-                    color: `#847F7D !important`,
-                  }}
-                >
-                  {url.replace(/^https?:\/\//, "")}
-                </a>
-              </MjmlText> */}
               <MjmlText>
                 If you did not request this email, you can safely ignore it.
               </MjmlText>

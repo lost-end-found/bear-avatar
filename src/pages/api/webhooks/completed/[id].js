@@ -16,10 +16,11 @@ export default async function handler(req, res) {
     sendEmail({
       to: user.email,
       subject: "Your prediction is complete!",
-      component: CompletedEmail({studioId: req.query.id})
+      component: CompletedEmail({url: req.query.id})
     });
     res.json({data: {
         status: 'success',
         message: 'Email sent',
+        id: req.query.id
     }})
 }

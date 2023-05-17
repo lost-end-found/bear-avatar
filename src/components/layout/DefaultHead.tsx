@@ -70,6 +70,19 @@ const DefaultHead = () => {
         dangerouslySetInnerHTML={addOrganizationJsonLd()}
         key="product-jsonld"
       />
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-1BTG4JYY0C"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-1BTG4JYY0C');
+        `}
+      </Script>
     </>
   )
 }

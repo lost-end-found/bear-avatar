@@ -1,4 +1,4 @@
-import db from "@/core/db";
+import db from "../../../../core/db";
 import { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/react";
 import replicateClient from "@/core/clients/replicate";

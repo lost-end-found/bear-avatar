@@ -65,7 +65,7 @@ const Slider = () => {
   );
 
   return (
-    <Flex overflowX="hidden" my={5} ref={sliderRef}>
+    <Flex className="px-4 sm:px-6 lg:px-8" overflowX="hidden" my={5} ref={sliderRef}>
       {prompts.map((prompt) =>
         ["girl", "guy", "larry"].map((name) => (
           <Box
